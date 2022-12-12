@@ -42,7 +42,9 @@ def check_answer(message):
                                      "Результат: " + value)
                 else:
                     bot.send_message(chat_id,
-                                     "Введены некорректные значения, повторите попытку")
+                                     "Ошибка! \n\n"
+                                     "1. Для работы с дробными числами, используйте точку, а не запятую. Например, 3.4\n"
+                                     "Проверьте правильность данных, отправленных боту")
             elif session.list_session[chat_id] in callback_data_solve_the_task_inside.keys():
                 value = callback_data_solve_the_task_inside[session.list_session[chat_id]][1](text)
                 if value != -1:
@@ -50,7 +52,29 @@ def check_answer(message):
                                      "Результат: " + value)
                 else:
                     bot.send_message(chat_id,
-                                     "Введены некорректные значения, повторите попытку")
+                                     "Ошибка! \n\n"
+                                     "1. Для работы с дробными числами, используйте точку, а не запятую. Например, 3.4\n"
+                                     "Проверьте правильность данных, отправленных боту")
+            elif session.list_session[chat_id] in callback_data_calculator.keys():
+                value = callback_data_calculator[session.list_session[chat_id]][1](text)
+                if value != -1:
+                    bot.send_message(chat_id,
+                                     "Результат: " + value)
+                else:
+                    bot.send_message(chat_id,
+                                     "Ошибка! \n\n"
+                                     "1. Для работы с дробными числами, используйте точку, а не запятую. Например, 3.4\n"
+                                     "Проверьте правильность данных, отправленных боту")
+            elif session.list_session[chat_id] in callback_data_calculator_inside.keys():
+                value = callback_data_calculator_inside[session.list_session[chat_id]][1](text)
+                if value != -1:
+                    bot.send_message(chat_id,
+                                     "Результат: " + value)
+                else:
+                    bot.send_message(chat_id,
+                                     "Ошибка! \n\n"
+                                     "1. Для работы с дробными числами, используйте точку, а не запятую. Например, 3.4\n"
+                                     "Проверьте правильность данных, отправленных боту")
 
 
 @bot.callback_query_handler(func=lambda click: True)

@@ -58,6 +58,18 @@ def main_logic(bot, callback_query: types.CallbackQuery):
     elif name_data in callback_data_solve_the_task_inside.keys():
         msg = bot.send_message(callback_query.message.chat.id, callback_data_solve_the_task_inside[name_data][0])
         session.list_session[callback_query.message.chat.id] = name_data
+    elif name_data in callback_data_calculator.keys():
+        choice = callback_data_calculator[name_data][2]
+        if choice:
+            inline_keyboard = generate_inline_markup(callback_data_calculator[name_data][2])
+        else:
+            inline_keyboard = None
+        msg = bot.send_message(callback_query.message.chat.id, callback_data_calculator[name_data][0],
+                               reply_markup=inline_keyboard)
+        session.list_session[callback_query.message.chat.id] = name_data
+    elif name_data in callback_data_calculator_inside.keys():
+        msg = bot.send_message(callback_query.message.chat.id, callback_data_calculator_inside[name_data][0])
+        session.list_session[callback_query.message.chat.id] = name_data
 
 
 
