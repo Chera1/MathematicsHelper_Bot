@@ -37,7 +37,7 @@ jobs:
 
     - name: wemake-python-styleguide
       uses: wemake-services/wemake-python-styleguide@0.17.0
-      continue-on-error: true
+      #continue-on-error: true
       with:
         reporter: 'github-pr-review'
       env:
