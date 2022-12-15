@@ -82,9 +82,9 @@ def cylinder_area(text):
 
 def area_of_the_cone(text):
     try:
-        r, l = text.split(',')
-        r, l = float(r), float(l)
-        return str(math.pi * r * l + math.pi * (r ** 2))
+        radius, l = text.split(',')
+        radius, l = float(radius), float(l)
+        return str(math.pi * radius * l + math.pi * (radius ** 2))
     except:
         return -1
 
