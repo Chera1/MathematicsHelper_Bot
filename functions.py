@@ -75,7 +75,7 @@ def cylinder_area(text):
     try:
         r, h = text.split(',')
         r, h = float(r), float(h)
-        return str(2*math.pi*r*(h+r))
+        return str(2 * math.pi * r * (h + r))
     except:
         return -1
 
@@ -147,7 +147,7 @@ def nok(text):
     try:
         a, b = text.split(',')
         a, b = int(a), int(b)
-        return str((a*b)/(math.gcd(a, b)))
+        return str((a * b) / (math.gcd(a, b)))
     except:
         return -1
 
@@ -164,7 +164,7 @@ def percent_1(text):
     try:
         a, b = text.split(',')
         a, b = float(a), float(b)
-        return str((a/b)*100) + '%'
+        return str((a / b) * 100) + '%'
     except:
         return -1
 
@@ -173,6 +173,6 @@ def percent_2(text):
     try:
         a, b = text.split(',')
         a, b = float(a), float(b)
-        return str((a/100)*b)
+        return str((a / 100) * b)
     except:
         return -1
