@@ -2,6 +2,7 @@ from aiogram.utils.markdown import bold
 from telebot import types
 from telebot.types import InlineKeyboardButton
 
+
 from functions import *
 
 start_menu = [types.KeyboardButton("📊 Таблицы"), types.KeyboardButton("📕 Формулы и теоремы"),
