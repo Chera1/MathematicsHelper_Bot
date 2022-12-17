@@ -9,7 +9,7 @@ jobs:
       - name: send telegram message on push
         uses: appleboy/telegram-action@master
         with:
-          to: "@kuchasimvolov"
+          to: "819105467"
           token: "bot984170438:AAEpeddondiZrWIqv0aef_aCHIxY3pOxHoo"
           message: |
             ${{ github.actor }} created commit:
