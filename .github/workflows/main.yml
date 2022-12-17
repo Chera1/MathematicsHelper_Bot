@@ -37,11 +37,24 @@ jobs:
 
     - name: wemake-python-styleguide
       uses: wemake-services/wemake-python-styleguide@0.17.0
-      #continue-on-error: true
+      continue-on-error: true
       with:
         reporter: 'github-pr-review'
       env:
         GITHUB_TOKEN: ${{ secrets.token }}
+    
+    - name: send telegram message on push
+      uses: appleboy/telegram-action@master
+      with:
+        to: ${{ secrets.TELEGRAM_TO }}
+        token: ${{ secrets.TELEGRAM_TOKEN }}
+        message: |
+          ${{ github.actor }} created commit:
+          Commit message: ${{ github.event.commits[0].message }}
+
+          Repository: ${{ github.repository }}
+
+          See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
 
 #    - name: Lint with flake8
 #      run: |
