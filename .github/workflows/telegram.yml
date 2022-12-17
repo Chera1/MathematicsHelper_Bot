@@ -1,0 +1,9 @@
+on: push
+jobs:
+  curl:
+    runs-on: ubuntu-latest
+    steps:
+    - name: curl
+      uses: wei/curl@master
+      with:
+        args: https://api.telegram.org/bot984170438:AAEpeddondiZrWIqv0aef_aCHIxY3pOxHoo/sendMessage?chat_id=@yandexteam17&text=Отправил_из_GitHubActions
